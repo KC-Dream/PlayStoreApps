@@ -1,0 +1,50 @@
+private float timeLeft = 60.0f; // set ur desired game time
+
+private void Update()
+{
+    timeLeft -= Time.deltaTime;
+    if (timeLeft <= 0)
+        GameOver();
+}
+
+private void GameOver()
+{
+    SceneManager.LoadScene(0); 
+}
+
+
+
+-----------------------------------------------------------
+Coroutine routine = StartCoroutine(Timer(maxTime, timerUpdateRate));
+
+StopCoroutine(routine);
+
+-----------------------------------------------------------
+using UnityEngine;
+using UnityEngine.UI;
+public class CountDown : MonoBehaviour
+{
+    public Text countdowntext;
+    float _countDownTimeLeft = 40.0f;
+     
+    void Update()
+    {
+        _countDownTimeLeft -= 1 * Time.deltaTime;
+         
+        countdowntext.text = _countDownTimeLeft.ToString("f2");
+    }
+    
+}
+//countdowntext.text = Mathd.RoundToInt(countDownTimeLeft).ToString();
+------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
